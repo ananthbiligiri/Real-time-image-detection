@@ -75,3 +75,9 @@ Press **'q'** to exit the webcam window.
 ## Notes
 - The trained model will be saved in `runs/train/exp/weights/best.pt`.
 - You can use **pre-trained models** (`yolov8n.pt`, `yolov8s.pt`) for better performance.
+
+## Results
+
+Here is an example of real-time image detection using YOLOv8:
+
+![Detection Result](result.jpg)
