@@ -26,7 +26,7 @@ pip install ultralytics opencv-python torch
 2. Run the script:
 
    ```bash
-   python detect.py
+   python run.py
    ```
 
 3. Press `q` to exit the detection window.
@@ -44,13 +44,6 @@ The YOLOv8 model is sourced from [Ultralytics](https://github.com/ultralytics/ul
 ## Customization
 - To use a different video source, update `cv2.VideoCapture(0)` in `detect.py`.
 - Modify detection parameters like confidence threshold inside the script.
-
-## License
-This project is open-source under the MIT License.
-
-## Acknowledgments
-- [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics)
-- [OpenCV](https://opencv.org/)
 
 
 Here is an example of real-time image detection using YOLOv8:
