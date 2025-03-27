@@ -79,5 +79,4 @@ Press **'q'** to exit the webcam window.
 ## Results
 
 Here is an example of real-time image detection using YOLOv8:
-
-![Detection Result](result.jpg)
+![Image](https://github.com/user-attachments/assets/a59b4743-4efa-4e79-a8a8-483ed06d598e)
