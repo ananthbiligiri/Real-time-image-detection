@@ -1,82 +1,57 @@
-# Real-Time Image Detection using YOLOv8
+# Real-Time Object Detection using YOLOv8
 
-This project implements **real-time object detection** using the **YOLOv8** model with OpenCV in Python. It includes training a custom dataset and running real-time detection with a webcam.
-
----
+This project implements real-time object detection using YOLOv8 and OpenCV. The model processes frames from a webcam and identifies objects in real time.
 
 ## Features
-- Train a **YOLOv8** model on a custom dataset
-- Perform real-time object detection using **OpenCV**
-- Easy-to-use **Python scripts** for training and detection
+- Utilizes **YOLOv8** for real-time object detection.
+- Uses OpenCV for video capture and display.
+- Draws bounding boxes and labels detected objects.
+- Runs efficiently on CPU and GPU.
 
----
+## Requirements
+Ensure you have the following dependencies installed:
 
-## Installation
-### **1. Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/Real-Time-YOLOv8-Detection.git
-cd Real-Time-YOLOv8-Detection
+pip install ultralytics opencv-python torch
 ```
 
-### **2. Install Dependencies**
-```bash
-pip install ultralytics opencv-python numpy
-```
+## Usage
+1. Clone the repository:
 
----
-
-## Training the Model
-### **Prepare Your Dataset**
-1. Organize dataset in **YOLO format**:
-   ```
-   dataset/
-   ├── images/
-   │   ├── train/
-   │   ├── val/
-   ├── labels/
-   │   ├── train/
-   │   ├── val/
-   ├── data.yaml
-   ```
-2. Edit `data.yaml` with the correct dataset paths:
-   ```yaml
-   train: path/to/your/dataset/images/train
-   val: path/to/your/dataset/images/val
-   
-   nc: 2  # Number of classes
-   names: ["class1", "class2"]
+   ```bash
+   git clone https://github.com/yourusername/real-time-yolo.git
+   cd real-time-yolo
    ```
 
-### **Train the Model**
-Run the following command to train the YOLOv8 model:
-```bash
-python train_yolo.py
-```
-This will train for **50 epochs** using **640x640** images.
+2. Run the script:
 
----
+   ```bash
+   python detect.py
+   ```
 
-## Running Real-Time Detection
-After training, run the following command to start real-time object detection using your webcam:
-```bash
-python detect.py
-```
-Press **'q'** to exit the webcam window.
+3. Press `q` to exit the detection window.
 
----
+## How It Works
+- The YOLOv8 model (`yolov8n.pt`) is loaded for detection.
+- Frames are captured from the webcam.
+- The model processes each frame and identifies objects.
+- Bounding boxes and labels are drawn for detected objects.
+- The processed frames are displayed in real-time.
 
-## File Descriptions
-- **train_yolo.py** → Script for training the YOLOv8 model
-- **detect.py** → Real-time object detection script
-- **data.yaml** → Dataset configuration file
+## Model
+The YOLOv8 model is sourced from [Ultralytics](https://github.com/ultralytics/ultralytics). You can replace `yolov8n.pt` with other YOLOv8 model weights for better accuracy or performance.
 
----
+## Customization
+- To use a different video source, update `cv2.VideoCapture(0)` in `detect.py`.
+- Modify detection parameters like confidence threshold inside the script.
 
-## Notes
-- The trained model will be saved in `runs/train/exp/weights/best.pt`.
-- You can use **pre-trained models** (`yolov8n.pt`, `yolov8s.pt`) for better performance.
+## License
+This project is open-source under the MIT License.
 
-## Results
+## Acknowledgments
+- [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics)
+- [OpenCV](https://opencv.org/)
+
 
 Here is an example of real-time image detection using YOLOv8:
 ![Image](https://github.com/user-attachments/assets/a59b4743-4efa-4e79-a8a8-483ed06d598e)
